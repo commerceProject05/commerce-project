@@ -1,38 +1,46 @@
-# 슈퍼코딩 1주차 프론트엔드 팀프로젝트 - airbnb
-## 🚀프로젝트 요구사항
-1. (필수) React, JavaScript 스택을 사용한다.
-2. (선택) TypeScript, Next.js 스택을 사용한다.
-3. (필수) Redux 또는 Context API를 통해 전역 상태를 관리한다.
-4. (필수) 커스텀 훅을 통해 공통으로 사용하는 로직을 관리한다.
-5. (선택) 스타일링은 styled-components 또는 tailwindcss 사용을 권장한다.
-6. 프론트엔드 직군끼리 진행하는 프로젝트이므로 mock 데이터나 공공으로 쓸 수 있는 오픈 API 등을 사용한다.
+# Getting Started with Create React App
 
-## 🚀 네이밍 규칙
-- 폴더명: 소문자만 사용 (ex) => hooks
-- 함수명, 변수명: camelCase
-- 컴포넌트, 생성자 함수, Class명: PascalCase
-- className: snake_case
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 코드
-- api 연결: json 파일의 dummy data 사용
-- css 적용: styled-components 사용
-- 코드는 최대한 함수형으로 작성
+## Available Scripts
 
-## 🚀 커밋 컨벤션
-- 기능 별로 커밋(최대한 상세히)
-- pull request시에는 팀원들과 이야기
-- feat **#이슈번호** : 새로운 기능 추가
-- fix **#이슈번호** : 버그 수정
-- style **#이슈번호** : 스타일 수정
-- docs **#이슈번호** : 문서 수정
-- test **#이슈번호** : 테스트 코드 추가
-- refactor **#이슈번호** : 코드 리펙토링
+In the project directory, you can run:
 
-## 🚀 Git Branch 전략
-- 브랜치명은 camelCase로 작성 (ex) => infiniteScroll
-- main: 기준이 되는 브랜치로 제품을 배포하는 브랜치
-- dev: 개발 브랜치로 개발자들이 이 브랜치를 기준으로 각자 작업한 기능들을 Merge
-- 각 기능명: 단위 기능을 개발하는 브랜치로 기능 개발이 완료되면 **dev 브랜치에 Merge**
-- [참조]: https://velog.io/@kw2577/Git-branch-%EC%A0%84%EB%9E%B5
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
