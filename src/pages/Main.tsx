@@ -42,112 +42,112 @@ const Main = () => {
           <ul className="goods">
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>
             </li>
             <li className="goods_item">
               <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
+                <img src="img_detail.webp" alt="img_thumbnail" />
               </div>
               <p className="goods_item_title">가평군, 한국</p>
               <p className="goods_item_price">₩68,278 /박</p>

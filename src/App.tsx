@@ -9,8 +9,7 @@ function App() {
       element: <Main />,
     },
     {
-      // path: "/detail/:id",
-      path: "/detail/",
+      path: "/detail/:id",
       element: <Detail />,
     },
   ]);
