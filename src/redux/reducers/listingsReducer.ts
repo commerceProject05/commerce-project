@@ -49,7 +49,7 @@ export const listingsReducer = (
       };
     //좋아요 높은 순서대로 정렬해주는 타입입니다
     case SORT_BY_LIKES:
-      const sortedListings = [...state.filteredListings].sort(
+      const sortedListings = [...state.allListings].sort(
         (a, b) => b.like - a.like
       );
       return { ...state, filteredListings: sortedListings };
