@@ -1,10 +1,7 @@
 import React from "react";
-import KaKaoMap from "../components/KaKaoMap";
 
 const Detail = () => {
-  return <div>
-    <KaKaoMap/>
-  </div>;
+  return <div>서브</div>;
 };
 
 export default Detail;
