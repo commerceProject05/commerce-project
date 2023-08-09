@@ -1,8 +1,28 @@
 import React from "react";
-
 import { StDetail } from "./stDetail";
+import { Calendar } from "../components/Calendar";
+import { useCalendar } from "../context/Calendar";
+import dayjs from "dayjs";
+import { DateRangeCalendar } from "../components/DateRangeCalendar";
 
 const Detail = () => {
+  const { rangeDate } = useCalendar();
+
+  // TODO: 이름 고민
+  function RangeDate() {
+    const [start, end] = rangeDate;
+
+    if (!start || !end) {
+      return (
+        <p className="detail_box_item_desc">
+          여행 날짜를 입력하여 정확한 요금을 확인하세요.
+        </p>
+      );
+    }
+
+    return `${parseDateToKo(start.$d)} - ${parseDateToKo(end.$d)}`;
+  }
+
   return (
     <StDetail>
       <header className="header">
@@ -70,15 +90,15 @@ const Detail = () => {
                   체크아웃 날짜를 선택하세요.
                 </p>
                 <p className="detail_box_item_desc">
-                  여행 날짜를 입력하여 정확한 요금을 확인하세요.
+                  {/*여행 날짜를 입력하여 정확한 요금을 확인하세요.*/}
+                  {RangeDate()}
                 </p>
                 <div className="date">
-                  <label>날짜</label>
-                  <input type="date" min="2019-01-01" max="2023-12-31" />
+                  <Calendar />
                 </div>
                 <div className="date">
-                  <label>날짜</label>
-                  <input type="date" min="2019-01-01" max="2023-12-31" />
+                  {/*<label>날짜</label>*/}
+                  {/*<input type="date" min="2019-01-01" max="2023-12-31" />*/}
                 </div>
               </div>
             </article>
@@ -95,20 +115,24 @@ const Detail = () => {
               <div className="detail_box_item map"></div>
             </article>
           </div>
+          <div>
+            <DateRangeCalendar />
+          </div>
           <div className="detail_reservation">
             <div>
               <p>요금을 확인하려면 날짜를</p>
               <p> 입력하세요.</p>
             </div>
             <div>
-              <div className="date">
-                <label>날짜</label>
-                <input type="date" min="2019-01-01" max="2023-12-31" />
-              </div>
-              <div className="date">
-                <label>날짜</label>
-                <input type="date" min="2019-01-01" max="2023-12-31" />
-              </div>
+              {/*<div className="date">*/}
+              {/*<Calendar />*/}
+              {/*<label>날짜</label>*/}
+              {/*<input type="date" min="2019-01-01" max="2023-12-31" />*/}
+              {/*</div>*/}
+              {/*<div className="date">*/}
+              {/*  <label>날짜</label>*/}
+              {/*  <input type="date" min="2019-01-01" max="2023-12-31" />*/}
+              {/*</div>*/}
             </div>
             <button>예약 가능 여부 보기</button>
           </div>
@@ -128,3 +152,8 @@ const Detail = () => {
 };
 
 export default Detail;
+
+function parseDateToKo(date: string) {
+  if (!date) return "";
+  return dayjs(date).format("YYYY년 MM월 DD일");
+}
