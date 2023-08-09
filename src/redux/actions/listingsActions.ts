@@ -1,6 +1,3 @@
-import { Listing } from "../../data/FilterTypeData";
-import { ThunkAction, ThunkDispatch } from "redux-thunk";
-
 // action type 설정하기
 export const SET_LISTINGS = "SET_LISTINGS";
 export const FILTER_LISTINGS = "FILTER_LISTINGS";

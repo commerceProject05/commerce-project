@@ -1,5 +1,4 @@
 import React from "react";
-import { CategoryData } from "../data/FilterTypeData";
 import { StyledLi } from "../pages/stMain";
 
 type FilterIconProps = {

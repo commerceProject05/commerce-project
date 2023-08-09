@@ -1,4 +1,4 @@
-export type CategoryData = {
+declare type CategoryData = {
   id: number;
   iconSrc: string;
   iconAlt: string;
@@ -6,7 +6,7 @@ export type CategoryData = {
   tag: string;
 };
 
-export type Listing = {
+declare type Listing = {
   id: number;
   title: string;
   host: string;
