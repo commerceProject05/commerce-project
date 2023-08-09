@@ -3,7 +3,6 @@ import {
   FILTER_LISTINGS,
   SORT_BY_LIKES,
 } from "../actions/listingsActions";
-import { Listing } from "../../data/FilterTypeData";
 
 //데이터가 들어올 initialState 값의 타입설정해주기
 interface StateType {

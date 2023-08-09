@@ -10,7 +10,6 @@ import {
   filterListings,
   sortByLikes,
 } from "../redux/actions/listingsActions";
-import { Listing } from "../data/FilterTypeData";
 
 const Main = () => {
   type RootState = {
@@ -69,11 +68,9 @@ const Main = () => {
 
         <article>
           <ul className="goods">
-
             {listings.map((item) => (
               <ListingItem key={item.id} item={item} />
             ))}
-
           </ul>
         </article>
       </main>
