@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StMain } from "./stMain";
+import data from "../data.json";
+import ListingItem from "../components/ListingItem";
+import { filterCategory } from "../data/filterCategoryData";
+import FilterIcon from "../components/FilterIcon";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setListings,
+  filterListings,
+  sortByLikes,
+} from "../redux/actions/listingsActions";
+import { Listing } from "../data/FilterTypeData";
 
 const Main = () => {
+  type RootState = {
+    allListings: Listing[];
+    filteredListings: Listing[];
+  };
+
+  const dispatch = useDispatch();
+  const listings = useSelector((state: RootState) => state.filteredListings);
+
+  useEffect(() => {
+    dispatch(setListings(data));
+  }, [dispatch]);
+
+  const handleFilterClick = (tag: string) => {
+    if (tag === "like") {
+      dispatch(sortByLikes());
+    } else {
+      dispatch(filterListings(tag));
+    }
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+
   return (
     <StMain>
       <header className="header">
@@ -20,138 +53,27 @@ const Main = () => {
       <main>
         <div className="category">
           <ul>
-            <li>
-              <img src="icon_popularity.png" alt="tag-icon-popularity" />
-              <p>인기 급상승</p>
-            </li>
-            <li>
-              <img src="icon_new.png" alt="tag-icon-new" />
-              <p>신규</p>
-            </li>
-            <li>
-              <img src="icon_best-view.png" alt="tag-icon-best-view" />
-              <p>최고의 전망</p>
-            </li>
-            <li>
-              <img src="icon_beach.png" alt="tag-icon-beach" />
-              <p>바닷가</p>
-            </li>
+            {filterCategory.map((item) => (
+              <FilterIcon
+                key={item.id}
+                item={item}
+                selected={selectedCategory === item.id}
+                onClick={() => {
+                  setSelectedCategory(item.id);
+                  handleFilterClick(item.tag);
+                }}
+              />
+            ))}
           </ul>
         </div>
+
         <article>
           <ul className="goods">
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
-            <li className="goods_item">
-              <div className="goods_item_thumbnail">
-                <img src="img_thumbnail.webp" alt="img_thumbnail" />
-              </div>
-              <p className="goods_item_title">가평군, 한국</p>
-              <p className="goods_item_price">₩68,278 /박</p>
-            </li>
+
+            {listings.map((item) => (
+              <ListingItem key={item.id} item={item} />
+            ))}
+
           </ul>
         </article>
       </main>
