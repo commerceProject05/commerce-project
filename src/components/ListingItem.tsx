@@ -11,7 +11,7 @@ const ListingItem: React.FC<ListingItemProps> = ({ item }) => {
   return (
     <li className="goods_item">
       <div className="goods_item_thumbnail">
-        <img src="img_thumbnail.webp" alt="img_thumbnail" />
+        <img src="img_detail.webp" alt="img_detail" />
       </div>
       <p className="goods_item_title">
         {item.title}, {itemLocation}
