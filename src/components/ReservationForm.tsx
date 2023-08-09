@@ -4,9 +4,12 @@ import { DateRangeCalendar } from "./DateRangeCalendar";
 import { getDiffDay } from "../utils/date";
 import { useCalendar } from "../context/Calendar";
 
-const price = 159000;
 const MINIMUM_GUEST = 1;
-export function ReservationForm() {
+
+type ReservationForm = {
+  price: Listing["price"];
+};
+export function ReservationForm({ price = 159000 }: ReservationForm) {
   const [guestCount, setGuestCount] = useState(MINIMUM_GUEST);
   const { rangeDate } = useCalendar();
   const [start, end] = rangeDate;
@@ -27,7 +30,7 @@ export function ReservationForm() {
     <Form onSubmit={handleSubmit}>
       <div>
         <Price>
-          ₩159,000 <span>/박</span>
+          ₩{price.toLocaleString("ko-KR")} <span>/박</span>
         </Price>
       </div>
       <DateRangeCalendar />
