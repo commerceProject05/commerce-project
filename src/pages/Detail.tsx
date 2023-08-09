@@ -3,7 +3,7 @@ import { StDetail } from "./stDetail";
 import { Calendar } from "../components/Calendar";
 import { useCalendar } from "../context/Calendar";
 import dayjs from "dayjs";
-import { DateRangeCalendar } from "../components/DateRangeCalendar";
+import { ReservationForm } from "../components/ReservationForm";
 
 const Detail = () => {
   const { rangeDate } = useCalendar();
@@ -115,26 +115,8 @@ const Detail = () => {
               <div className="detail_box_item map"></div>
             </article>
           </div>
-          <div>
-            <DateRangeCalendar />
-          </div>
           <div className="detail_reservation">
-            <div>
-              <p>요금을 확인하려면 날짜를</p>
-              <p> 입력하세요.</p>
-            </div>
-            <div>
-              {/*<div className="date">*/}
-              {/*<Calendar />*/}
-              {/*<label>날짜</label>*/}
-              {/*<input type="date" min="2019-01-01" max="2023-12-31" />*/}
-              {/*</div>*/}
-              {/*<div className="date">*/}
-              {/*  <label>날짜</label>*/}
-              {/*  <input type="date" min="2019-01-01" max="2023-12-31" />*/}
-              {/*</div>*/}
-            </div>
-            <button>예약 가능 여부 보기</button>
+            <ReservationForm />
           </div>
           <div className="detail_reservation_hidden">
             <div>

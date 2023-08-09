@@ -10,6 +10,7 @@ export function DateRangeCalendar() {
       localeText={{ start: "체크인", end: "체크아웃" }}
       onChange={(value) => setRangeDate(value)}
       value={rangeDate}
+      className={"calendar_input"}
     />
   );
 }
