@@ -2,9 +2,10 @@ import React from "react";
 import { StDetail } from "./stDetail";
 import { Calendar } from "../components/Calendar";
 import { useCalendar } from "../context/Calendar";
-import dayjs from "dayjs";
 import { ReservationForm } from "../components/ReservationForm";
+import { parseDateToKo } from "../utils/date";
 
+const price = 159000;
 const Detail = () => {
   const { rangeDate } = useCalendar();
 
@@ -134,8 +135,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-function parseDateToKo(date: string) {
-  if (!date) return "";
-  return dayjs(date).format("YYYY년 MM월 DD일");
-}

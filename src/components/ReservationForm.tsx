@@ -1,11 +1,20 @@
 import styled from "@emotion/styled";
 import { FormEvent } from "react";
 import { DateRangeCalendar } from "./DateRangeCalendar";
+import { getDiffDay } from "../utils/date";
+import { useCalendar } from "../context/Calendar";
+
+const price = 159000;
 
 export function ReservationForm() {
+  const { rangeDate } = useCalendar();
+  const [start, end] = rangeDate;
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
+
+  const diffDay = start && end ? getDiffDay(start, end) : 0;
   return (
     <Form onSubmit={handleSubmit}>
       <div>
@@ -16,12 +25,23 @@ export function ReservationForm() {
       <DateRangeCalendar />
       <div>게스트 3명</div>
       <ReservationButton>예약하기</ReservationButton>
-      <Description>예약 확정 전에는 요금이 청구되지 않습니다.</Description>
-      <TotalWrapper>
-        <TotalContainer>
-          <span>총 합계</span> <span>₩954,000</span>
-        </TotalContainer>
-      </TotalWrapper>
+      {diffDay !== 0 && (
+        <>
+          <Description>예약 확정 전에는 요금이 청구되지 않습니다.</Description>
+          <OptionWrapper>
+            <span>
+              ₩{price.toLocaleString("ko-KR")} x {diffDay}박
+            </span>
+            <span>₩{(diffDay * price).toLocaleString("ko-KR")}</span>
+          </OptionWrapper>
+          <TotalWrapper>
+            <TotalContainer>
+              <span>총 합계</span>{" "}
+              <span>₩{(diffDay * price).toLocaleString("ko-KR")}</span>
+            </TotalContainer>
+          </TotalWrapper>
+        </>
+      )}
     </Form>
   );
 }
@@ -61,6 +81,20 @@ const Description = styled.span`
   font-size: 14px;
   font-weight: normal;
   margin: 0 auto;
+`;
+
+const OptionWrapper = styled.div`
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+
+  span {
+    font-size: 16px;
+    color: #595959;
+  }
+  span:nth-child(1) {
+    text-decoration: underline;
+  }
 `;
 
 const TotalWrapper = styled.div`
