@@ -1,5 +1,4 @@
 import React from "react";
-import { Listing } from "../data/FilterTypeData";
 
 type ListingItemProps = {
   item: Listing;

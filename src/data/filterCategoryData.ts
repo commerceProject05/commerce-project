@@ -1,5 +1,3 @@
-import { CategoryData } from "./FilterTypeData";
-
 export const filterCategory: CategoryData[] = [
   {
     id: 0,
