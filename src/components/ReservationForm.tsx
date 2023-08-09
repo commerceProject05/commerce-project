@@ -1,17 +1,25 @@
 import styled from "@emotion/styled";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { DateRangeCalendar } from "./DateRangeCalendar";
 import { getDiffDay } from "../utils/date";
 import { useCalendar } from "../context/Calendar";
 
 const price = 159000;
-
+const MINIMUM_GUEST = 1;
 export function ReservationForm() {
+  const [guestCount, setGuestCount] = useState(MINIMUM_GUEST);
   const { rangeDate } = useCalendar();
   const [start, end] = rangeDate;
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+  };
+
+  const handleClickGuestCount = (diffNumber: number) => {
+    const nextCount = guestCount + diffNumber;
+    setGuestCount((guestCount) =>
+      nextCount <= MINIMUM_GUEST ? MINIMUM_GUEST : nextCount
+    );
   };
 
   const diffDay = start && end ? getDiffDay(start, end) : 0;
@@ -23,8 +31,20 @@ export function ReservationForm() {
         </Price>
       </div>
       <DateRangeCalendar />
-      <div>게스트 3명</div>
-      <ReservationButton>예약하기</ReservationButton>
+      <GuestWrapper>
+        <span>게스트 {guestCount}명</span>
+        <CountWrapper>
+          <button
+            onClick={() => handleClickGuestCount(-1)}
+            disabled={guestCount === MINIMUM_GUEST}
+          >
+            -
+          </button>
+          <span className="count">{guestCount}</span>
+          <button onClick={() => handleClickGuestCount(1)}>+</button>
+        </CountWrapper>
+      </GuestWrapper>
+      <ReservationButton disabled={!(start && end)}>예약하기</ReservationButton>
       {diffDay !== 0 && (
         <>
           <Description>예약 확정 전에는 요금이 청구되지 않습니다.</Description>
@@ -74,6 +94,46 @@ const ReservationButton = styled.button`
   border-radius: 1rem;
   background-color: #e31c5f;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: initial;
+  }
+`;
+
+const GuestWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: 20px;
+  }
+`;
+
+const CountWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  .count {
+    font-size: 20px;
+  }
+
+  button {
+    border-radius: 50%;
+    border: 1px solid #8c8c8c;
+    height: 32px;
+    width: 32px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  button:disabled {
+    cursor: initial;
+    border-color: lightgray;
+    color: lightgray;
+  }
 `;
 
 const Description = styled.span`
