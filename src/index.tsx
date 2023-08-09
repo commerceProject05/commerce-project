@@ -4,12 +4,19 @@ import App from "./App";
 import "./index.css";
 import store from "./redux/store/store";
 import { Provider } from "react-redux";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { CalendarProvider } from "./context/Calendar";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <Provider store={store}>
-    <App />
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <CalendarProvider>
+        <App />
+      </CalendarProvider>
+    </LocalizationProvider>
   </Provider>
 );
