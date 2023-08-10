@@ -112,6 +112,7 @@ export const StDetail = styled.div`
       }
     }
     .detail_wrapper {
+      position: relative;
       width: 1120px;
       margin-top: 30px;
       display: grid;
@@ -196,62 +197,15 @@ export const StDetail = styled.div`
           gap: 20px;
         }
         &_reservation {
+          position: sticky;
+          top: 10rem;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           border-radius: 20px;
-          max-height: 220px;
-          padding: 30px 40px;
-          box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+          max-height: 400px;
           @media (max-width: 930px) {
             display: none;
-          }
-          p {
-            font-size: 2.2rem;
-            padding-bottom: 5px;
-          }
-          button {
-            background-color: var(--main-bg-color);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            width: 100%;
-            height: 44px;
-            font-size: 1.6rem;
-          }
-          &_hidden {
-            display: none;
-            @media (max-width: 930px) {
-              width: 100%;
-              height: 80px;
-              background-color: #fff;
-              display: flex;
-              justify-content: center;
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              div {
-                width: 90%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                p {
-                  font-size: 1.6rem;
-                  color: #131313;
-                }
-                button {
-                  border: none;
-                  border-radius: 8px;
-                  padding: 10px 20px;
-                  background-color: var(--main-bg-color);
-                  color: #fff;
-                  font-weight: 700;
-                  font-size: 1.4rem;
-                  cursor: pointer;
-                  user-select: none;
-                }
-              }
-            }
           }
         }
       }

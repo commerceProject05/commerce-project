@@ -1,8 +1,41 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { StDetail } from "./stDetail";
+import { Calendar } from "../components/Calendar";
+import { useCalendar } from "../context/Calendar";
+import { ReservationForm } from "../components/ReservationForm";
+import { parseDateToKo } from "../utils/date";
+import { getDetail } from "../api";
+import { useFetch } from "../hooks/useFetch";
+import { useParams } from "react-router-dom";
+import KaKaoMap from "../components/KaKaoMap";
 
+const DEFAULT_PRICE = 1;
 const Detail = () => {
+  const { rangeDate } = useCalendar();
+  let { id } = useParams();
+
+  // TODO: id || 1 <- 실제적으로는 에러핸드링해야함
+  const { data, isLoading, error } = useFetch(() => getDetail(Number(id || 1)));
+
+  // TODO: 이름 고민
+  function RangeDate() {
+    const [start, end] = rangeDate;
+
+    if (!start || !end) {
+      return (
+        <p className="detail_box_item_desc">
+          여행 날짜를 입력하여 정확한 요금을 확인하세요.
+        </p>
+      );
+    }
+
+    return `${parseDateToKo(start.$d)} - ${parseDateToKo(end.$d)}`;
+  }
+
+  // TODO: 로딩, 에러 UI 구현시
+  // if (!data && isLoading) return <div>로딩중...</div>;
+  // if (!data ||) return <div>잘못된 요청입니다.</div>;
+
   return (
     <StDetail>
       <header className="header">
@@ -69,16 +102,9 @@ const Detail = () => {
                 <p className="detail_box_item_title">
                   체크아웃 날짜를 선택하세요.
                 </p>
-                <p className="detail_box_item_desc">
-                  여행 날짜를 입력하여 정확한 요금을 확인하세요.
-                </p>
+                <p className="detail_box_item_desc">{RangeDate()}</p>
                 <div className="date">
-                  <label>날짜</label>
-                  <input type="date" min="2019-01-01" max="2023-12-31" />
-                </div>
-                <div className="date">
-                  <label>날짜</label>
-                  <input type="date" min="2019-01-01" max="2023-12-31" />
+                  <Calendar />
                 </div>
               </div>
             </article>
@@ -92,31 +118,13 @@ const Detail = () => {
                 <p className="detail_box_item_title">호스팅 지역</p>
                 <p className="detail_box_item_desc">가평군, 경기도, 한국</p>
               </div>
-              <div className="detail_box_item map"></div>
+              <div className="detail_box_item map">
+                {data && !isLoading && <KaKaoMap />}
+              </div>
             </article>
           </div>
           <div className="detail_reservation">
-            <div>
-              <p>요금을 확인하려면 날짜를</p>
-              <p> 입력하세요.</p>
-            </div>
-            <div>
-              <div className="date">
-                <label>날짜</label>
-                <input type="date" min="2019-01-01" max="2023-12-31" />
-              </div>
-              <div className="date">
-                <label>날짜</label>
-                <input type="date" min="2019-01-01" max="2023-12-31" />
-              </div>
-            </div>
-            <button>예약 가능 여부 보기</button>
-          </div>
-          <div className="detail_reservation_hidden">
-            <div>
-              <p>요금을 확인하려면 날짜를 입력하세요.</p>
-              <button>예약 가능 여부 보기</button>
-            </div>
+            <ReservationForm price={data ? data.price : DEFAULT_PRICE} />
           </div>
         </div>
       </main>

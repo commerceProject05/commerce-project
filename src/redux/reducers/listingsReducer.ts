@@ -2,6 +2,7 @@ import {
   SET_LISTINGS,
   FILTER_LISTINGS,
   SORT_BY_LIKES,
+  FILTER_SEARCH
 } from "../actions/listingsActions";
 
 //데이터가 들어올 initialState 값의 타입설정해주기
@@ -20,7 +21,8 @@ const initialState: StateType = {
 type ListingsAction =
   | { type: typeof SET_LISTINGS; payload: Listing[] }
   | { type: typeof FILTER_LISTINGS; payload: string }
-  | { type: typeof SORT_BY_LIKES };
+  | { type: typeof SORT_BY_LIKES }
+  | { type: typeof FILTER_SEARCH; payload: string };
 
 //액션을 수행하는 리듀서 함수입니다.
 export const listingsReducer = (
@@ -52,6 +54,18 @@ export const listingsReducer = (
         (a, b) => b.like - a.like
       );
       return { ...state, filteredListings: sortedListings };
+
+    //검색필터 처리하는 타입입니다. 파라미터값을 받아와서 주소로 필터링합니다.
+    case FILTER_SEARCH:
+      if (action.payload === "all") {
+        return { ...state, filteredListings: state.allListings };
+      }
+      return {
+        ...state,
+        filteredListings: state.allListings.filter((listing) =>
+          listing.location.includes(action.payload)
+        ),
+      };
 
     default:
       return state;
