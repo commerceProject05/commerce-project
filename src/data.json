@@ -39,7 +39,7 @@
     "maximum": 9,
     "bedroom": 1,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 3,
@@ -95,7 +95,7 @@
     "maximum": 11,
     "bedroom": 2,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@
     "maximum": 13,
     "bedroom": 3,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 8,
@@ -179,7 +179,7 @@
     "maximum": 6,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 13,
@@ -193,7 +193,7 @@
     "maximum": 3,
     "bedroom": 3,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 14,
@@ -235,7 +235,7 @@
     "maximum": 4,
     "bedroom": 2,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 17,
@@ -263,7 +263,7 @@
     "maximum": 14,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 19,
@@ -291,7 +291,7 @@
     "maximum": 12,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 21,
@@ -305,7 +305,7 @@
     "maximum": 8,
     "bedroom": 3,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 22,
@@ -333,7 +333,7 @@
     "maximum": 11,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 24,
@@ -347,7 +347,7 @@
     "maximum": 4,
     "bedroom": 1,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 25,
@@ -375,7 +375,7 @@
     "maximum": 6,
     "bedroom": 3,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 27,
@@ -403,7 +403,7 @@
     "maximum": 4,
     "bedroom": 3,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 29,
@@ -417,7 +417,7 @@
     "maximum": 12,
     "bedroom": 1,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 30,
@@ -431,7 +431,7 @@
     "maximum": 7,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 31,
@@ -445,7 +445,7 @@
     "maximum": 11,
     "bedroom": 3,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 32,
@@ -501,7 +501,7 @@
     "maximum": 10,
     "bedroom": 3,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 36,
@@ -529,7 +529,7 @@
     "maximum": 12,
     "bedroom": 1,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 38,
@@ -599,7 +599,7 @@
     "maximum": 5,
     "bedroom": 3,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 43,
@@ -641,7 +641,7 @@
     "maximum": 2,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 46,
@@ -655,7 +655,7 @@
     "maximum": 3,
     "bedroom": 1,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   },
   {
     "id": 47,
@@ -697,6 +697,6 @@
     "maximum": 13,
     "bedroom": 1,
     "bathroom": 1,
-    "tag": []
+    "tag": [""]
   }
 ]

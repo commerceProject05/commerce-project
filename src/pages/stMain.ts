@@ -65,12 +65,6 @@ export const StMain = styled.div`
           user-select: none;
         }
       }
-      &_login {
-        font-size: 1.4rem;
-        font-weight: 500;
-        cursor: pointer;
-        user-select: none;
-      }
     }
   }
   main {
