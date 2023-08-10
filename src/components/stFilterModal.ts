@@ -50,6 +50,7 @@ export const ModalBackground = styled.div<ModalBackgroundProps>`
     background-color: #fff;
     border-radius: 15px;
     transform: translateY(100vh);
+    /* overflow: hidden; */
 
     animation: ${({ $isAnimating }) =>
       $isAnimating ? "slideUp 0.7s forwards" : "slideDown 0.7s forwards"};

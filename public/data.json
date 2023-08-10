@@ -12,7 +12,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_1.webp"
+    "img": "/img/img_1.webp"
   },
   {
     "id": 1,
@@ -27,7 +27,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["view"],
-    "img": "./img/img_2.webp"
+    "img": "/img/img_2.webp"
   },
   {
     "id": 2,
@@ -42,7 +42,7 @@
     "bedroom": 1,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_3.webp"
+    "img": "/img/img_3.webp"
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": ["new"],
-    "img": "./img/img_4.webp"
+    "img": "/img/img_4.webp"
   },
   {
     "id": 4,
@@ -72,7 +72,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": ["sea"],
-    "img": "./img/img_5.webp"
+    "img": "/img/img_5.webp"
   },
   {
     "id": 5,
@@ -87,7 +87,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_6.webp"
+    "img": "/img/img_6.webp"
   },
   {
     "id": 6,
@@ -102,7 +102,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_7.webp"
+    "img": "/img/img_7.webp"
   },
   {
     "id": 7,
@@ -117,7 +117,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_8.webp"
+    "img": "/img/img_8.webp"
   },
   {
     "id": 8,
@@ -132,7 +132,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_9.webp"
+    "img": "/img/img_9.webp"
   },
   {
     "id": 9,
@@ -147,7 +147,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["sea"],
-    "img": "./img/img_10.webp"
+    "img": "/img/img_10.webp"
   },
   {
     "id": 10,
@@ -162,7 +162,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": ["view"],
-    "img": "./img/img_11.webp"
+    "img": "/img/img_11.webp"
   },
   {
     "id": 11,
@@ -177,7 +177,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": ["sea"],
-    "img": "./img/img_12.webp"
+    "img": "/img/img_12.webp"
   },
   {
     "id": 12,
@@ -192,7 +192,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_13.webp"
+    "img": "/img/img_13.webp"
   },
   {
     "id": 13,
@@ -207,7 +207,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_14.webp"
+    "img": "/img/img_14.webp"
   },
   {
     "id": 14,
@@ -222,7 +222,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_15.webp"
+    "img": "/img/img_15.webp"
   },
   {
     "id": 15,
@@ -230,14 +230,14 @@
     "host": "의석",
     "description": "숙소 설명 16",
     "caution": "주의 사항 16",
-    "price": 2949995,
+    "price": 294999,
     "location": "부산 수영구 남천바다로 31-1 AK빌딩 7층",
     "like": 92,
     "maximum": 6,
     "bedroom": 1,
     "bathroom": 2,
-    "tag": ["sea"],
-    "img": "./img/img_16.webp"
+    "tag": ["sea", "new"],
+    "img": "/img/img_16.webp"
   },
   {
     "id": 16,
@@ -251,8 +251,8 @@
     "maximum": 4,
     "bedroom": 2,
     "bathroom": 1,
-    "tag": [""],
-    "img": "./img/img_17.webp"
+    "tag": ["sea"],
+    "img": "/img/img_17.webp"
   },
   {
     "id": 17,
@@ -267,7 +267,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": ["new"],
-    "img": "./img/img_18.webp"
+    "img": "/img/img_18.webp"
   },
   {
     "id": 18,
@@ -281,8 +281,8 @@
     "maximum": 14,
     "bedroom": 2,
     "bathroom": 2,
-    "tag": [""],
-    "img": "./img/img_19.webp"
+    "tag": ["sea"],
+    "img": "/img/img_19.webp"
   },
   {
     "id": 19,
@@ -297,7 +297,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": ["view"],
-    "img": "./img/img_20.webp"
+    "img": "/img/img_20.webp"
   },
   {
     "id": 20,
@@ -312,7 +312,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_21.webp"
+    "img": "/img/img_21.webp"
   },
   {
     "id": 21,
@@ -327,7 +327,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_22.webp"
+    "img": "/img/img_22.webp"
   },
   {
     "id": 22,
@@ -342,7 +342,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_23.webp"
+    "img": "/img/img_23.webp"
   },
   {
     "id": 23,
@@ -357,7 +357,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_24.webp"
+    "img": "/img/img_24.webp"
   },
   {
     "id": 24,
@@ -372,7 +372,7 @@
     "bedroom": 1,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_25.webp"
+    "img": "/img/img_25.webp"
   },
   {
     "id": 25,
@@ -387,7 +387,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["view", "sea"],
-    "img": "./img/img_26.webp"
+    "img": "/img/img_26.webp"
   },
   {
     "id": 26,
@@ -402,7 +402,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_27.webp"
+    "img": "/img/img_27.webp"
   },
   {
     "id": 27,
@@ -417,7 +417,7 @@
     "bedroom": 3,
     "bathroom": 1,
     "tag": ["view"],
-    "img": "./img/img_28.webp"
+    "img": "/img/img_28.webp"
   },
   {
     "id": 28,
@@ -432,7 +432,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_29.webp"
+    "img": "/img/img_29.webp"
   },
   {
     "id": 29,
@@ -447,7 +447,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_30.webp"
+    "img": "/img/img_30.webp"
   },
   {
     "id": 30,
@@ -462,7 +462,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_31.webp"
+    "img": "/img/img_31.jpg"
   },
   {
     "id": 31,
@@ -477,7 +477,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_32.webp"
+    "img": "/img/img_32.webp"
   },
   {
     "id": 32,
@@ -492,7 +492,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["view"],
-    "img": "./img/img_33.webp"
+    "img": "/img/img_33.webp"
   },
   {
     "id": 33,
@@ -507,7 +507,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["view", "sea"],
-    "img": "./img/img_34.webp"
+    "img": "/img/img_34.webp"
   },
   {
     "id": 34,
@@ -522,7 +522,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["new"],
-    "img": "./img/img_35.webp"
+    "img": "/img/img_35.webp"
   },
   {
     "id": 35,
@@ -537,7 +537,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_36.webp"
+    "img": "/img/img_36.webp"
   },
   {
     "id": 36,
@@ -552,7 +552,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": ["sea"],
-    "img": "./img/img_37.webp"
+    "img": "/img/img_37.webp"
   },
   {
     "id": 37,
@@ -567,7 +567,7 @@
     "bedroom": 1,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_38.webp"
+    "img": "/img/img_38.webp"
   },
   {
     "id": 38,
@@ -582,7 +582,7 @@
     "bedroom": 1,
     "bathroom": 2,
     "tag": ["sea"],
-    "img": "./img/img_39.webp"
+    "img": "/img/img_39.webp"
   },
   {
     "id": 39,
@@ -597,7 +597,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["view"],
-    "img": "./img/img_40.webp"
+    "img": "/img/img_40.webp"
   },
   {
     "id": 40,
@@ -612,7 +612,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": ["view"],
-    "img": "./img/img_41.webp"
+    "img": "/img/img_41.webp"
   },
   {
     "id": 41,
@@ -627,7 +627,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": ["new"],
-    "img": "./img/img_42.webp"
+    "img": "/img/img_42.webp"
   },
   {
     "id": 42,
@@ -642,7 +642,7 @@
     "bedroom": 3,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_43.webp"
+    "img": "/img/img_43.webp"
   },
   {
     "id": 43,
@@ -657,7 +657,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["sea"],
-    "img": "./img/img_44.webp"
+    "img": "/img/img_44.webp"
   },
   {
     "id": 44,
@@ -672,7 +672,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": ["new"],
-    "img": "./img/img_45.webp"
+    "img": "/img/img_45.webp"
   },
   {
     "id": 45,
@@ -687,7 +687,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": [""],
-    "img": "./img/img_46.webp"
+    "img": "/img/img_46.webp"
   },
   {
     "id": 46,
@@ -702,7 +702,7 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_47.webp"
+    "img": "/img/img_47.webp"
   },
   {
     "id": 47,
@@ -717,7 +717,7 @@
     "bedroom": 2,
     "bathroom": 1,
     "tag": ["view"],
-    "img": "./img/img_48.webp"
+    "img": "/img/img_48.webp"
   },
   {
     "id": 48,
@@ -732,7 +732,7 @@
     "bedroom": 2,
     "bathroom": 2,
     "tag": ["sea"],
-    "img": "./img/img_49.webp"
+    "img": "/img/img_49.webp"
   },
   {
     "id": 49,
@@ -747,6 +747,6 @@
     "bedroom": 1,
     "bathroom": 1,
     "tag": [""],
-    "img": "./img/img_50.webp"
+    "img": "/img/img_50.webp"
   }
 ]

@@ -145,3 +145,8 @@ table {
 .calendar_input input {
   font-size: 14px;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

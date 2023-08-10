@@ -16,6 +16,7 @@ import { RootState } from "../redux/store/store";
 import NavLogin from "../components/NavLogin";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { styled } from "styled-components";
 
 // 무한스크롤
 interface Item {
@@ -55,10 +56,10 @@ const Main = () => {
 
     //
     if (listings) {
-      setDatas(listings);
-    } else {
+      setDatas(listings.slice(0, PAGE_SIZE * page));
       setPage(page + 1);
     }
+    setPage(page + 1);
   }, [listings]);
 
   console.log("origin datas", datas);
@@ -115,7 +116,6 @@ const Main = () => {
     }
   };
 
-
   //모달을 오픈하기위한 함수입니다.
   const showModalHandler = () => {
     setShowModal(true);
@@ -149,8 +149,7 @@ const Main = () => {
             </ul>
           </div>
 
-          <article>
-            <h1>Infinite Scroll Example</h1>
+          <article style={{ overflowY: "hidden" }}>
             <InfiniteScroll
               dataLength={listings.length}
               next={() => {
@@ -174,9 +173,9 @@ const Main = () => {
             {/* ))} */}
           </article>
         </main>
-        <footer className="footer">
+        {/* <footer className="footer">
           <div className="footer_box">푸터</div>
-        </footer>
+        </footer> */}
       </StMain>
       {showModal && (
         <FilterModalBackdrop
