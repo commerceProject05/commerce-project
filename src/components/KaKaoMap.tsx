@@ -26,8 +26,6 @@ const KaKaoMap = () => {
 
   const [_map, setMap] = useState<any>();
 
-  console.log(_map);
-
   // 스크립트로 kakao maps api를 심어서 가져오면 window전역 객체에 들어간다.
   // 함수형 컴포넌트에서는 이것을 바로 인식하지 못하기 때문에 인지시켜 window에서 kakao 객체를
   // 뽑아쓰기 위해 작성
@@ -89,7 +87,7 @@ const KaKaoMap = () => {
   }
 
   return (
-    <div>
+    <div style={{position:"relative"}}>
       <Map id='map'/>
       <ZoomControl className="custom_zoomcontrol radius_border">
         <span onClick={zoomIn}>
@@ -104,8 +102,8 @@ const KaKaoMap = () => {
 }
 
 const Map = styled.div`
-  width:80vw;
-  height:400px;
+  width:100%;
+  height:480px;
   position:relative;
   /* overflow:hidden; */
 `;
@@ -113,9 +111,9 @@ const Map = styled.div`
 const ZoomControl = styled.div`
   border-radius:5px;
 
-  position:absolute;
-  top:50px;
-  right:350px;
+  position: absolute; /* 고정 위치 */
+  top: 40px; /* 원하는 위치로 조정 */
+  right: 40px; /* 원하는 위치로 조정 */
   width:36px;
   height:80px;
   overflow:hidden;
@@ -134,7 +132,7 @@ const ZoomControl = styled.div`
     cursor:pointer;
     img{
       width:15px;
-      height:15px;
+      height:20px;
       padding:12px 0;
       border:none;
     }

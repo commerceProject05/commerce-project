@@ -7,6 +7,7 @@ import { parseDateToKo } from "../utils/date";
 import { getDetail } from "../api";
 import { useFetch } from "../hooks/useFetch";
 import { useParams } from "react-router-dom";
+import KaKaoMap from "../components/KaKaoMap";
 
 const DEFAULT_PRICE = 1;
 const Detail = () => {
@@ -117,7 +118,9 @@ const Detail = () => {
                 <p className="detail_box_item_title">호스팅 지역</p>
                 <p className="detail_box_item_desc">가평군, 경기도, 한국</p>
               </div>
-              <div className="detail_box_item map"></div>
+              <div className="detail_box_item map">
+                {data && !isLoading && <KaKaoMap />}
+              </div>
             </article>
           </div>
           <div className="detail_reservation">
