@@ -10,11 +10,16 @@ import {
   filterListings,
   sortByLikes,
 } from "../redux/actions/listingsActions";
+import FilterModalBackdrop from "../components/FilterModalBackdrop";
 import Search from "../components/Search";
 import { RootState } from "../redux/store/store";
 import NavLogin from "../components/NavLogin";
 
 const Main = () => {
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const [showModal, setShowModal] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   // reducer를 combine하는 과정에서 Rootstate type을 수정했습니다!
   // 해당 Rootstate 타입은 다른 곳에서도 사용 될 것 같아서 store.ts에서 선언해놨습니다.
   // type RootState = {
@@ -66,46 +71,58 @@ const Main = () => {
 
   console.log("listings", listings);
 
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const showModalHandler = () => {
+    setShowModal(true);
+    setIsAnimating(true);
+  };
 
   return (
-    <StMain>
-      <header className="header">
-        <div className="header_box">
-          <img src="./logo.svg" alt="logo" />
-          <Search search={search} />
-          <NavLogin />
-        </div>
-      </header>
-      <main>
-        <div className="category">
-          <ul>
-            {filterCategory.map((item) => (
-              <FilterIcon
-                key={item.id}
-                item={item}
-                selected={selectedCategory === item.id}
-                onClick={() => {
-                  setSelectedCategory(item.id);
-                  handleFilterClick(item.tag);
-                }}
-              />
-            ))}
-          </ul>
-        </div>
+    <>
+      <StMain>
+        <header className="header">
+          <div className="header_box">
+            <img src="./logo.svg" alt="logo" onClick={showModalHandler} />
+            <Search search={search} />
+            <NavLogin />
+          </div>
+        </header>
+        <main>
+          <div className="category">
+            <ul>
+              {filterCategory.map((item) => (
+                <FilterIcon
+                  key={item.id}
+                  item={item}
+                  selected={selectedCategory === item.id}
+                  onClick={() => {
+                    setSelectedCategory(item.id);
+                    handleFilterClick(item.tag);
+                  }}
+                />
+              ))}
+            </ul>
+          </div>
 
-        <article>
-          <ul className="goods">
-            {listings.map((item) => (
-              <ListingItem key={item.id} item={item} />
-            ))}
-          </ul>
-        </article>
-      </main>
-      <footer className="footer">
-        <div className="footer_box">푸터</div>
-      </footer>
-    </StMain>
+          <article>
+            <ul className="goods">
+              {listings.map((item) => (
+                <ListingItem key={item.id} item={item} />
+              ))}
+            </ul>
+          </article>
+        </main>
+        <footer className="footer">
+          <div className="footer_box">푸터</div>
+        </footer>
+      </StMain>
+      {showModal && (
+        <FilterModalBackdrop
+          setShowModal={setShowModal}
+          isAnimating={isAnimating}
+          setIsAnimating={setIsAnimating}
+        />
+      )}
+    </>
   );
 };
 

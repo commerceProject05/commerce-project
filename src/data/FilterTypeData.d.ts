@@ -20,3 +20,8 @@ declare type Listing = {
   bathroom: number;
   tag: string[];
 };
+
+declare type RootState = {
+  allListings: Listing[];
+  filteredListings: Listing[];
+};
