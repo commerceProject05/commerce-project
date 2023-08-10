@@ -10,12 +10,12 @@ import {
   filterListings,
   sortByLikes,
 } from "../redux/actions/listingsActions";
+import FilterModalBackdrop from "../components/FilterModalBackdrop";
 
 const Main = () => {
-  type RootState = {
-    allListings: Listing[];
-    filteredListings: Listing[];
-  };
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const [showModal, setShowModal] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const dispatch = useDispatch();
   const listings = useSelector((state: RootState) => state.filteredListings);
@@ -32,14 +32,17 @@ const Main = () => {
     }
   };
 
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const showModalHandler = () => {
+    setShowModal(true);
+    setIsAnimating(true);
+  };
 
   return (
     <>
       <StMain>
         <header className="header">
           <div className="header_box">
-            <img src="./logo.svg" alt="logo" />
+            <img src="./logo.svg" alt="logo" onClick={showModalHandler} />
             <form>
               <label>
                 <div>여행지</div>
@@ -73,11 +76,19 @@ const Main = () => {
               ))}
             </ul>
           </article>
+          <div></div>
         </main>
         <footer className="footer">
           <div className="footer_box">푸터</div>
         </footer>
       </StMain>
+      {showModal && (
+        <FilterModalBackdrop
+          setShowModal={setShowModal}
+          isAnimating={isAnimating}
+          setIsAnimating={setIsAnimating}
+        />
+      )}
     </>
   );
 };
