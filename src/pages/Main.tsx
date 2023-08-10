@@ -10,12 +10,16 @@ import {
   filterListings,
   sortByLikes,
 } from "../redux/actions/listingsActions";
+import Search from "../components/Search";
+
+type RootState = {
+  allListings: Listing[];
+  filteredListings: Listing[];
+};
 
 const Main = () => {
-  type RootState = {
-    allListings: Listing[];
-    filteredListings: Listing[];
-  };
+
+  const [searchInput, setSearchInput] = useState('');
 
   const dispatch = useDispatch();
   const listings = useSelector((state: RootState) => state.filteredListings);
@@ -23,6 +27,10 @@ const Main = () => {
   useEffect(() => {
     dispatch(setListings(data));
   }, [dispatch]);
+  
+  useEffect(() => {
+    searchCheck(searchInput);
+  }, [searchInput]);
 
   const handleFilterClick = (tag: string) => {
     if (tag === "like") {
@@ -32,6 +40,25 @@ const Main = () => {
     }
   };
 
+  // search 검색어를 검색버튼 누르면 자식 컴포넌트에서 받아오기
+  const search = (input:string) => {
+    setSearchInput(input);
+  }
+
+  // 검색어 키워드가 있는데 필터링한 list가 없을때 alert창 띄운후 모든 리스트 나타냄(임시)
+  const searchCheck = (input:string) => {
+    let length = input.length;
+    console.log('length',input.length);
+    if (length > 0 && listings.length < 1) {
+      console.log('안되나');
+      alert('해당 검색어의 에어비엔비 상품을 찾을 수 없습니다.')
+      dispatch(setListings(data));
+      setSearchInput('');
+    }
+  }
+
+  console.log('listings', listings);
+
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
   return (
@@ -40,13 +67,7 @@ const Main = () => {
         <header className="header">
           <div className="header_box">
             <img src="./logo.svg" alt="logo" />
-            <form>
-              <label>
-                <div>여행지</div>
-                <input type="text" placeholder="여행지 입력" />
-              </label>
-              <button>검색</button>
-            </form>
+            <Search search={search}/>
             <div className="header_box_login">로그인</div>
           </div>
         </header>
