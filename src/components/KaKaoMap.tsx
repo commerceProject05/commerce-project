@@ -22,7 +22,10 @@ interface GeocoderResult {
   etc: string;
 }
 
-const KaKaoMap = () => {
+type KaKaoMapProps = {
+  address: string;
+}
+const KaKaoMap = ({ address = '' }: KaKaoMapProps) => {
 
   const [_map, setMap] = useState<any>();
 
@@ -45,7 +48,7 @@ const KaKaoMap = () => {
     const geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체
 
     // 주소로 좌표를 검색.
-    geocoder?.addressSearch('서울 종로구 종로5가', function (
+    geocoder?.addressSearch(address, function (
       result: GeocoderResult[],
       status: Status
     ) {
@@ -68,7 +71,7 @@ const KaKaoMap = () => {
 
         // 인포윈도우로 장소에 대한 설명.
         const infowindow = new kakao.maps.InfoWindow({
-          content: '<div style="width:150px;text-align:center;padding:6px 0;font-size:15px; color:red">동대문 시장</div>'
+          content: `<div style="width:150px;text-align:center;padding:6px 0;font-size:15px; color:red">${address}</div>`
         });
         infowindow.open(map, marker);
 
