@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import ChartBar from "./ChartBar";
 import SliderTrack from "./SliderTrack";
+import { RootState } from "../redux/store/store";
 
 const FilterModalItem = () => {
   const [rangeValueOne, setRangeValueOne] = useState<number | null>(null);
   const [rangeValueTwo, setRangeValueTwo] = useState<number | null>(null);
-  const listings = useSelector((state: RootState) => state.allListings);
+  const listings = useSelector(
+    (state: RootState) => state.listingsReducer.allListings
+  );
   const pricefilter = listings.map((el) => el.price);
   const minValue = Math.min(...pricefilter);
   const maxValue = Math.max(...pricefilter);
   const interval = (maxValue - minValue) / 25;
-
-  console.log(listings);
 
   const pricedata = listings.filter((item) => {
     if (rangeValueOne !== null && rangeValueTwo !== null) {
@@ -22,10 +23,6 @@ const FilterModalItem = () => {
   });
 
   const hotelLength = pricedata.length;
-
-  console.log(pricedata);
-
-  console.log(hotelLength);
 
   let sections: number[][] = [];
 
