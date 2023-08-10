@@ -44,6 +44,7 @@ const Main = () => {
   // 리듀서가 컴바인되면서 Rootstate가 바뀌고 기존 코드가 에러를 내뿜었습니다
   // 해당 state안에서 사용하는 리듀서를 호출해줘야해요!
 
+  //처음 홈페이지가 켜졌을때 기본적으로 모든숙소데이터를 가져와서 보여줍니다.
   useEffect(() => {
     // API 요청으로 새로운 데이터 처리
     // axios.get(`/data.json`).then((res) => {
@@ -88,6 +89,8 @@ const Main = () => {
     searchCheck(searchInput);
   }, [searchInput]);
 
+  //현재 클릭한 필터아이콘이 인기순이면, 인기순정렬 액션을보내고,
+  //그외 다른 카테고리라면 그에 맞는 tag값을 필터정렬액션에 담아서 보냅니다.
   const handleFilterClick = (tag: string) => {
     if (tag === "like") {
       dispatch(sortByLikes());
@@ -112,6 +115,8 @@ const Main = () => {
     }
   };
 
+
+  //모달을 오픈하기위한 함수입니다.
   const showModalHandler = () => {
     setShowModal(true);
     setIsAnimating(true);

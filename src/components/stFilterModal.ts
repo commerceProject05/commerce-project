@@ -123,6 +123,22 @@ export const ModalBackground = styled.div<ModalBackgroundProps>`
         justify-content: space-between;
         margin-top: 200px;
         align-items: center;
+        button {
+          padding: 10px 25px;
+          color: #fff;
+          background-color: #333;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: transform 0.3s;
+        }
+        button:hover {
+          background-color: #000;
+        }
+        button:active {
+          transform: scale(0.95);
+        }
       }
     }
   }
