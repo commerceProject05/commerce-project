@@ -45,23 +45,6 @@ const Main = () => {
   // 리듀서가 컴바인되면서 Rootstate가 바뀌고 기존 코드가 에러를 내뿜었습니다
   // 해당 state안에서 사용하는 리듀서를 호출해줘야해요!
 
-  //처음 홈페이지가 켜졌을때 기본적으로 모든숙소데이터를 가져와서 보여줍니다.
-  useEffect(() => {
-    // API 요청으로 새로운 데이터 처리
-    // axios.get(`/data.json`).then((res) => {
-    // setOriginData(res.data); // 50
-    // });
-    // setDatas(res.data.slice(0, PAGE_SIZE * page)); // 16
-    // setPage(page + 1);
-
-    //
-    if (listings) {
-      setDatas(listings.slice(0, PAGE_SIZE * page));
-      setPage(page + 1);
-    }
-    setPage(page + 1);
-  }, [listings]);
-
   console.log("origin datas", datas);
 
   // 인프니트 스크롤
@@ -122,12 +105,13 @@ const Main = () => {
     setIsAnimating(true);
   };
 
+  const roomItems = listings.slice(0, PAGE_SIZE * page);
   return (
     <>
       <StMain>
         <header className="header">
           <div className="header_box">
-            <img src="./logo.svg" alt="logo" onClick={showModalHandler} />
+            <img src="./logo.svg" alt="logo" />
             <Search search={search} />
             <NavLogin />
           </div>
@@ -146,26 +130,19 @@ const Main = () => {
                   }}
                 />
               ))}
+              <FilterBtn onClick={showModalHandler}>...</FilterBtn>
             </ul>
           </div>
 
-          <article style={{ overflowY: "hidden" }}>
+          <article>
             <InfiniteScroll
-              dataLength={listings.length}
-              next={() => {
-                // origin Data 에는 50개 데이터있음
-                // datas 에는 16개의 데이터가 있음
-                // next 를 호출할때 0~16 을 0~32
-                // console.log("next를 호출합니다.");
-                setDatas(listings.slice(0, PAGE_SIZE * page));
-                setPage(page + 1);
-              }}
-              hasMore={listings.length > datas.length}
+              dataLength={roomItems.length}
+              next={() => setPage((prev) => prev + 1)}
+              hasMore={true}
               loader={<h4>Loading...</h4>}
             >
-              {/* {datas.map((box) => ( */}
               <ul className="goods">
-                {datas.map((item) => (
+                {roomItems.map((item) => (
                   <ListingItem key={item.id} item={item} />
                 ))}
               </ul>
@@ -189,3 +166,13 @@ const Main = () => {
 };
 
 export default Main;
+
+const FilterBtn = styled.button`
+  width: 70px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+`;

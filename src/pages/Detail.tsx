@@ -6,7 +6,7 @@ import { ReservationForm } from "../components/ReservationForm";
 import { parseDateToKo } from "../utils/date";
 import { getDetail } from "../api";
 import { useFetch } from "../hooks/useFetch";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import KaKaoMap from "../components/KaKaoMap";
 import NavLogin from "../components/NavLogin";
 
@@ -56,7 +56,9 @@ const Detail = () => {
     <StDetail>
       <header className="header">
         <div className="header_box">
-          <img src="/logo.svg" alt="logo" />
+          <Link to="/">
+            <img src="/logo.svg" alt="logo" />
+          </Link>
           <form>
             <label>
               <div>여행지</div>
@@ -140,9 +142,9 @@ const Detail = () => {
           </div>
         </div>
       </main>
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="footer_box">푸터</div>
-      </footer>
+      </footer> */}
     </StDetail>
   );
 };

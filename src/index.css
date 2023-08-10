@@ -150,3 +150,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.infinite-scroll-component {
+  overflow: hidden !important;
+}

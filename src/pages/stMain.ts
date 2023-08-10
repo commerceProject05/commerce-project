@@ -84,7 +84,7 @@ export const StMain = styled.div`
       ul {
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: center;
         gap: 10px;
         /* li {
           position: relative;
