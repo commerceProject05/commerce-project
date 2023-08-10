@@ -21,7 +21,7 @@ const FilterModalItem: React.FC<{ closeModal: () => void }> = ({
 
   //현재 전체 숙소정보의 가격정보를 가져와서 막대그래프에 쓰일 수치를 만듭니다.
   //최소가격과 최대가격 사이 구간을 25등분해서 나누었습니다.
-  const minValue = Math.min(...pricefilter);
+  const minValue = 0;
   const maxValue = Math.max(...pricefilter);
   const interval = (maxValue - minValue) / 25;
 
@@ -37,6 +37,8 @@ const FilterModalItem: React.FC<{ closeModal: () => void }> = ({
 
   //sections에 위에서 계산한 25등분의 수치를 반복문을 사용해 2차원 배열로 넣었습니다.
   let sections: number[][] = [];
+
+  console.log(sections);
 
   for (let i = 0; i < 25; i++) {
     const start = minValue + i * interval;
@@ -85,7 +87,7 @@ const FilterModalItem: React.FC<{ closeModal: () => void }> = ({
           //위에서 구한 가격분포도로 map을 돌려서 막대그래프를 만듭니다.
           //즉, 총 25개의 ChartBar가 생성되며 화면에서 보이는 막대그래프트 하나하나가 ChartBar입니다.
           //props로 현재 분포도의 값을 백분율로 계산해 넘겨줍니다. 0인 값은 아예 막대그래프가 안보이기에 기본값으로 3을 주었습니다.
-          const percentage = Math.max((result / 50) * 100, 3);
+          const percentage = Math.max((result / 50) * 300, 3);
           return (
             <ChartBar
               key={i}

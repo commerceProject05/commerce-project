@@ -68,6 +68,7 @@ const SliderTrack: React.FC<RangeValueProps> = ({
     const percent2 = (valueTwo / sliderMaxValue) * 100;
     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}%, #7F7F7F ${percent1}%, #7F7F7F ${percent2}%, #dadae5 ${percent2}%)`;
   };
+
   //이 함수는 사용자가 최저가격창에 값을 입력한후에, 포커싱을 잃었을때 발동하는 함수입니다.
   //사용자가 입력한 값이 최대가격 이상이라면 minGap 차이만큼 최대값보다 아래로 되돌리는 역할을 하고,
   //입력한 값이 최저가격보다 낮은 가격을 입력했다면 최저가격으로 되돌립니다.
