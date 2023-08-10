@@ -2,7 +2,8 @@ import {
   SET_LISTINGS,
   FILTER_LISTINGS,
   SORT_BY_LIKES,
-  FILTER_SEARCH
+  FILTER_SEARCH,
+  FILTER_PRICES,
 } from "../actions/listingsActions";
 
 //데이터가 들어올 initialState 값의 타입설정해주기
@@ -22,7 +23,8 @@ type ListingsAction =
   | { type: typeof SET_LISTINGS; payload: Listing[] }
   | { type: typeof FILTER_LISTINGS; payload: string }
   | { type: typeof SORT_BY_LIKES }
-  | { type: typeof FILTER_SEARCH; payload: string };
+  | { type: typeof FILTER_SEARCH; payload: string }
+  | { type: typeof FILTER_PRICES; payload: Listing[] };
 
 //액션을 수행하는 리듀서 함수입니다.
 export const listingsReducer = (
@@ -66,6 +68,9 @@ export const listingsReducer = (
           listing.location.includes(action.payload)
         ),
       };
+    //가격필터 모달창을통해 필터된 숙소들을 받아와서 보여줍니다!
+    case FILTER_PRICES:
+      return { ...state, filteredListings: action.payload };
 
     default:
       return state;
