@@ -39,6 +39,11 @@ const KaKaoMap = ({ data, address = "" }: KaKaoMapProps) => {
   const { kakao } = window;
 
   useEffect(() => {
+    if (!kakao) {
+      console.error("kakao API 가 존재하지 않습니다.");
+      return;
+    }
+
     // TODO: 카카오 맵 처리 과정 클래스로 관리하기
     const container = document.getElementById("container"); // 지도와 로드뷰를 감싸고 있는 div 입니다
     const mapWrapper = document?.getElementById("map"); //지도를 담을 영역의 DOM 레퍼런스
