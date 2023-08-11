@@ -133,7 +133,12 @@ const Detail = () => {
                 <p className="detail_box_item_desc">{위치}</p>
               </div>
               <div className="detail_box_item map">
-                {data && !isLoading && <KaKaoMap address={data.location.split(' ').join(' ')}/>}
+                {data && !isLoading && (
+                  <KaKaoMap
+                    data={data}
+                    address={data.location.split(" ").join(" ")}
+                  />
+                )}
               </div>
             </article>
           </div>
