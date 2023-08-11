@@ -108,6 +108,7 @@ export const StDetail = styled.div`
         }
         img {
           display: flex;
+          width: 100%;
         }
       }
     }

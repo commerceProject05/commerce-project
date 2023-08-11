@@ -6,8 +6,9 @@ import { ReservationForm } from "../components/ReservationForm";
 import { parseDateToKo } from "../utils/date";
 import { getDetail } from "../api";
 import { useFetch } from "../hooks/useFetch";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import KaKaoMap from "../components/KaKaoMap";
+import NavLogin from "../components/NavLogin";
 
 const DEFAULT_PRICE = 1;
 const Detail = () => {
@@ -34,13 +35,30 @@ const Detail = () => {
 
   // TODO: 로딩, 에러 UI 구현시
   // if (!data && isLoading) return <div>로딩중...</div>;
-  // if (!data ||) return <div>잘못된 요청입니다.</div>;
+  // if (!data || error) return <div>잘못된 요청입니다.</div>;
+
+  const locations = data ? data.location.split(" ") : ["", ""];
+  const 위치 = locations.slice(0, 2).join(",");
+
+  // 추후 수정 예정 좀더 좋은코드로!
+  const getTagIconSrc = (tagName: any) => {
+    return (
+      {
+        new: ["/icon_new.png", "신규"],
+        sea: ["/icon_beach.png", "바닷가"],
+        view: ["/icon_best-view.png", "최고의 전망"],
+        "": ["/icon_new.png", "신규"],
+      } as any
+    )[tagName];
+  };
 
   return (
     <StDetail>
       <header className="header">
         <div className="header_box">
-          <img src="./logo.svg" alt="logo" />
+          <Link to="/">
+            <img src="/logo.svg" alt="logo" />
+          </Link>
           <form>
             <label>
               <div>여행지</div>
@@ -48,53 +66,49 @@ const Detail = () => {
             </label>
             <button>검색</button>
           </form>
-          <div className="header_box_login">로그인</div>
+          <NavLogin />
         </div>
       </header>
       <main>
         <section className="section">
-          <h1>더플래츠글램핑</h1>
-          <p>가평군, 경기도, 한국</p>
+          <h1>{data?.title}</h1>
+          <p>{위치}</p>
           <div className="section_item_detail">
-            <img src="img_detail.webp" alt="img_thumbnail" />
+            <img src={data?.img} alt="img_thumbnail" />
           </div>
         </section>
-
         <div className="detail_wrapper">
           <div className="detail">
             <article className="detail_box">
               <div className="detail_box_item">
                 <p className="detail_box_item_title">
-                  필숙 님이 호스팅하는 텐트
+                  {data?.host} 님이 호스팅하는 숙소
                 </p>
                 <p className="detail_box_item_desc">
-                  최대 인원 2명﹒침실﹒1개침대﹒1개공용 간이
+                  최대 인원 {data?.maximum}명, 침실 {data?.bedroom}개, 욕실{" "}
+                  {data?.bathroom}개
                 </p>
               </div>
-              <div className="detail_box_item profile">필</div>
+              <div className="detail_box_item profile">{data?.host}</div>
             </article>
             <article className="detail_box tag">
-              <div className="detail_box_item">
-                <img src="icon_best-view.png" alt="icon" />
-              </div>
-              <p className="detail_box_item_title">최고의 전망</p>
-              <div className="detail_box_item">
-                <img src="icon_new.png" alt="icon" />
-              </div>
-              <p className="detail_box_item_title">신규</p>
+              {data?.tag.map((item, index) => {
+                // TODO: 리팩토링 - 컴포넌트화
+                const [iconSrc, title] = getTagIconSrc(item);
+                return (
+                  <React.Fragment key={index}>
+                    <div className="detail_box_item">
+                      <img src={iconSrc} alt="icon" />
+                    </div>
+                    <p className="detail_box_item_title">{title}</p>
+                  </React.Fragment>
+                );
+              })}
             </article>
             <article className="detail_box description">
               <div className="detail_box_item">
-                <p className="detail_box_item_desc">
-                  안녕하세요! 가평 상면에 위치해 있는 글램핑장 '더 플래츠
-                  글램핑' 입니다^^
-                </p>
-                <p className="detail_box_item_desc">
-                  항상 최고의 서비스와 힐링공간으로 보답해 드리겠습니다~!!
-                </p>
-                <p className="detail_box_item_desc">
-                  철저한 위생 청결, 소독과 방역 준수 O
-                </p>
+                <p className="detail_box_item_desc">{data?.description}</p>
+                <p className="detail_box_item_desc">{data?.caution}</p>
               </div>
             </article>
             <article className="detail_box">
@@ -116,10 +130,15 @@ const Detail = () => {
             <article className="detail_box column">
               <div className="detail_box_item">
                 <p className="detail_box_item_title">호스팅 지역</p>
-                <p className="detail_box_item_desc">가평군, 경기도, 한국</p>
+                <p className="detail_box_item_desc">{위치}</p>
               </div>
               <div className="detail_box_item map">
-                {data && !isLoading && <KaKaoMap />}
+                {data && !isLoading && (
+                  <KaKaoMap
+                    data={data}
+                    address={data.location.split(" ").join(" ")}
+                  />
+                )}
               </div>
             </article>
           </div>
@@ -128,9 +147,9 @@ const Detail = () => {
           </div>
         </div>
       </main>
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="footer_box">푸터</div>
-      </footer>
+      </footer> */}
     </StDetail>
   );
 };

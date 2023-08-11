@@ -19,6 +19,7 @@ declare type Listing = {
   bedroom: number;
   bathroom: number;
   tag: string[];
+  img?: string;
 };
 
 declare type RootState = {
