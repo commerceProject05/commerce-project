@@ -1,14 +1,6 @@
 # 에어비앤비 클론 코딩 팀 프로젝트
+**서비스 바로가기:** https://commerce-project-beta.vercel.app/
 
-<aside>
-💡 [**Github**](https://github.com/commerceProject05/commerce-project)
-
-</aside>
-
-<aside>
-💡 [**서비스 바로가기**](https://commerce-project-beta.vercel.app/)
-
-</aside>
 
 ## 프로젝트 소개
 
